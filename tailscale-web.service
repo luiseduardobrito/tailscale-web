@@ -1,9 +1,14 @@
 [Unit]
 Description=Tailscale Web UI
-After=tailscaled.service
+After=network.target
+StartLimitIntervalSec=0
 
 [Service]
-ExecStart=/bin/bash tailscale-web.sh
-ExecReload=/bin/bash tailscale-web.sh
-Type=notify
+Type=simple
 Restart=always
+RestartSec=1
+User=root
+ExecStart=/bin/bash /etc/tailscale/tailscale-web.sh
+
+[Install]
+WantedBy=multi-user.target
