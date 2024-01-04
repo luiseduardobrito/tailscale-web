@@ -1,18 +1,8 @@
-# tailscale-web
+#!/bin/bash
 
-## Getting started
+set -e;
+set +x;
 
-Use the single line install script to install the latest version of tailscale-web.
-
-```bash
-curl -s https://raw.githubusercontent.com/luiseduardobrito/tailscale-web/main/install.sh | sudo bash
-
-```
-
-Or install manually following the steps below:
-
-
-```bash
 # Define your repository source
 REPO="https://raw.githubusercontent.com/luiseduardobrito/tailscale-web/main";
 
@@ -27,4 +17,3 @@ sudo systemctl daemon-reload;
 
 # Start tailscale web
 sudo systemctl enable --now tailscale-web.service;
-```
