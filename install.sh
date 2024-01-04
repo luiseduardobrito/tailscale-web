@@ -6,6 +6,9 @@ set +x;
 # Define your repository source
 REPO="https://raw.githubusercontent.com/luiseduardobrito/tailscale-web/main";
 
+# Prepare destination directory
+mkdir -p "/etc/tailscale"
+
 # Install shell init script
 curl -o "/etc/tailscale/tailscale-web.sh" "$REPO/tailscale-web.sh";
 
