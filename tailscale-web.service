@@ -1,0 +1,9 @@
+[Unit]
+Description=Tailscale Web UI
+After=tailscaled.service
+
+[Service]
+ExecStart=/bin/bash tailscale-web.sh
+ExecReload=/bin/bash tailscale-web.sh
+Type=notify
+Restart=always
